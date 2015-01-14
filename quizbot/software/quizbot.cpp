@@ -5,11 +5,10 @@
 #include <msl/time.hpp>
 #include <mutex>
 #include <string>
-#include <thread>
-
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
 #include <rapidjson/stringbuffer.h>
+#include <thread>
 
 std::string port="/dev/ttyUSB0";
 size_t baud=57600;
