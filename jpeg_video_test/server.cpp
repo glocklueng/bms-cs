@@ -34,46 +34,53 @@ int main()
 
 std::string get_jpg(const std::string& who,const size_t quality)
 {
-	msl::tcp_socket_t get("0.0.0.0:0>"+who);
-	get.open();
-
-	if(!get.good())
+	try
 	{
-		std::cout<<"bad connection!"<<std::endl;
-		return "";
-	}
+		msl::tcp_socket_t get("0.0.0.0:0>"+who);
+		get.open();
 
-	std::string request="GET /cam.jpg?quality="+std::to_string(quality)+" HTTP/1.1\r\n";
-	request+="Connection: close\r\n";
-	request+="\r\n";
-	get.write(request);
-
-	std::cout<<"requesting:\n"<<request<<std::endl;
-
-	std::string jpg="";
-	uint8_t temp;
-
-	while(get.available()>=0&&get.read(&temp,1)==1)
-		jpg+=temp;
-
-	get.close();
-
-	bool found=false;
-
-	for(size_t ii=0;ii<jpg.size();++ii)
-	{
-		if(ii+3<jpg.size()&&jpg[ii]==(char)0xff&&jpg[ii+1]==(char)0xd8&&jpg[ii+2]==(char)0xff&&jpg[ii+3]==(char)0xe0)
+		if(!get.good())
 		{
-			found=true;
-			jpg=jpg.substr(ii,jpg.size()-ii);
-			break;
+			std::cout<<"bad connection!"<<std::endl;
+			return "";
 		}
+
+		std::string request="GET /cam.jpg?quality="+std::to_string(quality)+" HTTP/1.1\r\n";
+		request+="Connection: close\r\n";
+		request+="\r\n";
+		get.write(request);
+
+		std::cout<<"requesting:\n"<<request<<std::endl;
+
+		std::string jpg="";
+		uint8_t temp;
+
+		while(get.available()>=0&&get.read(&temp,1)==1)
+			jpg+=temp;
+
+		get.close();
+
+		bool found=false;
+
+		for(size_t ii=0;ii<jpg.size();++ii)
+		{
+			if(ii+3<jpg.size()&&jpg[ii]==(char)0xff&&jpg[ii+1]==(char)0xd8&&jpg[ii+2]==(char)0xff&&jpg[ii+3]==(char)0xe0)
+			{
+				found=true;
+				jpg=jpg.substr(ii,jpg.size()-ii);
+				break;
+			}
+		}
+
+		if(!found)
+			return "";
+
+		return jpg;
 	}
+	catch(...)
+	{}
 
-	if(!found)
-		return "";
-
-	return jpg;
+	return "";
 }
 
 void send_jpg(const mg_connection& connection,const std::string& jpg)
