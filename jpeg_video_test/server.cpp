@@ -13,7 +13,7 @@ void send_jpg(const mg_connection& connection,const std::string& jpg);
 
 bool client_func(const mg_connection& connection,enum mg_event event);
 
-msl::webserver_t server(client_func,"0.0.0.0:8080","web");
+msl::webserver_t server(client_func,"0.0.0.0:80","web");
 
 int main()
 {
@@ -32,7 +32,7 @@ int main()
 	return 0;
 }
 
-std::string get_jpg(const std::string& who,const size_t quality)
+std::string get_jpg(const std::string& who)
 {
 	try
 	{
@@ -45,7 +45,7 @@ std::string get_jpg(const std::string& who,const size_t quality)
 			return "";
 		}
 
-		std::string request="GET /cam.jpg?quality="+std::to_string(quality)+" HTTP/1.1\r\n";
+		std::string request="GET /cam.jpg HTTP/1.1\r\n";
 		request+="Connection: close\r\n";
 		request+="\r\n";
 		get.write(request);
@@ -101,7 +101,6 @@ bool client_func(const mg_connection& connection,enum mg_event event)
 
 	if(std::string(connection.uri)=="/cam.jpg")
 	{
-		size_t quality=30;
 		std::string who="";
 
 		if(connection.query_string!=nullptr)
@@ -135,15 +134,8 @@ bool client_func(const mg_connection& connection,enum mg_event event)
 				std::string key=head->key;
 				std::string value=head->value;
 
-				if(key=="quality")
-				{
-					try{quality=std::stoi(value);}
-					catch(...){}
-				}
-				else if(key=="who")
-				{
+				if(key=="who")
 					who=value;
-				}
 
 				head=head->next;
 			}
@@ -152,7 +144,7 @@ bool client_func(const mg_connection& connection,enum mg_event event)
 			uriFreeUriMembersA(&uri);
 		}
 
-		send_jpg(connection,get_jpg(who,quality));
+		send_jpg(connection,get_jpg(who));
 		return true;
 	}
 
