@@ -34,7 +34,7 @@ int main()
 
 std::string get_jpg(const std::string& who,const size_t quality)
 {
-	msl::tcp_socket_t get("0.0.0.0:0>127.0.0.1:8081");
+	msl::tcp_socket_t get("0.0.0.0:0>"+who);
 	get.open();
 
 	if(!get.good())
