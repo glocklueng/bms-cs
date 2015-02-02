@@ -21,32 +21,30 @@
 			$(function(){$( "#tabs" ).tabs();});
 		</script>
 
-
 		<title>RobotMoose - Pilot</title>
 	</head>
 
 	<body role="document" onload="run();">
 
-
 		<div class="container theme-showcase" role="main" style="padding-top: 70px;">
 			<div class="page-header">
 				<h1>Pilot</h1>
 			</div>
-						<table>
-				<tr>
-					<td>
-						<div id="pilot_arrows" style="background-color:#808080;position:relative;width:400px;height:400px;" onmousedown="pilot_mouse(event,0)" ondblclick="pilot_mouse(event,2)" ondragstart="pilot_mouse(event,0)" onmouseout="pilot_mouse(event,1)"  onmouseup="pilot_mouse(event,1)" onmousemove="pilot_mouse(event,2)">
-							<img src="img/arrows_hard.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;pointer-events:none;"/>
-							<img id="glow" src="img/arrows_glow.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;pointer-events:none;"/>
-						</div>
-					</td>
-					<td style="width:100%;height:100%">
-						<div id="video_area" style="width:100%;height:100%">
-							<iframe id="video_frame" style="width:100%;height:400px" src=""></iframe>
-						</div>
-					</td>
-				</tr>
-			</table>
+				<!--<table>
+					<tr>
+						<td>
+							<div id="pilot_arrows" style="background-color:#808080;position:relative;width:400px;height:400px;" onmousedown="pilot_mouse(event,0)" ondblclick="pilot_mouse(event,2)" ondragstart="pilot_mouse(event,0)" onmouseout="pilot_mouse(event,1)"  onmouseup="pilot_mouse(event,1)" onmousemove="pilot_mouse(event,2)">
+								<img src="img/arrows_hard.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;pointer-events:none;"/>
+								<img id="glow" src="img/arrows_glow.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;pointer-events:none;"/>
+							</div>
+						</td>
+						<td style="width:100%;height:100%">
+							<div id="video_area" style="width:100%;height:100%">
+								<iframe id="video_frame" style="width:100%;height:400px" src=""></iframe>
+							</div>
+						</td>
+					</tr>
+				</table>-->
 
 			<div id="tabs">
 				<ul>
@@ -57,7 +55,7 @@
 				</ul>
 
 				<div id="tabs-1">
-					<p>
+					<!--<p>
 						Robot Name: <input type="text" id="robot_name" rows="1" cols="30" onChange="run();" value="layla/uaf"/>
 						<input value="Video - Gruveo" type="button" onClick="runCmd('video','r'+((new Date()).getTime())); openGruveoVideo()"/><br/>
 
@@ -67,11 +65,11 @@
 						Drive Power: <input type="text" id="robot_power" rows="1" cols="30" onChange="run()" value="15"/><br/>
 
 						Pilot Auth: <input type="text" id="robot_auth" rows="1" cols="30" onChange="run()" value=""/><br/>
-					</p>
+					</p>-->
 				</div>
 
 				<div id="tabs-2">
-					<p>
+					<!--<p>
 						Show text: <input type="text" id="robot_showtext" rows="1" cols="30" onChange="runCmd('say',this.value)" value="Hi! "/><br/>
 
 						Play sounds:
@@ -99,13 +97,12 @@
 								</tr>
 							</table>
 						</div>
-					</p>
+					</p>-->
 				</div>
 
 				<div id="tabs-3">
-					<table>
+					<!--<table>
 						<CAPTION> Current Sensor Values</CAPTION>
-						<!-- Display Utrasonic Sensor Values -->
 						<tr>
 							<td colspan="5">
 								Ultrasonic Sensors
@@ -116,11 +113,11 @@
 								<input id="USonic5" size ="3" disabled/>
 							</td>
 						</tr>
-					</table>
+					</table>-->
 				</div>
 
 				<div id="tabs-4">
-					<table>
+					<!--<table>
 						<tr>
 							<td>
 								<p id="p_outputNet"> Network Status</p>
@@ -131,7 +128,7 @@
 								<p id="p_outputPilot">Pilot Status</p>
 							</td>
 						</tr>
-					</table>
+					</table>-->
 				</div>
 			</div>
 
@@ -140,9 +137,9 @@
 				document.getElementById("tabs").collapsible=true;
 			</script>
 
-			<div id="status_area" style="font-style:italic;">
+			<!--<div id="status_area" style="font-style:italic;">
 				<p id="p_errorout" style="color:red;">ERROR: JavaScript not enabled.</p>
-			</div>
+			</div>-->
 		</div>
 	</body>
 </html>
