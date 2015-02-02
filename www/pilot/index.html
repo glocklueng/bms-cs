@@ -2,20 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 
 <!-- Our Javascript functions -->
-<script type="text/javascript" src="js/pilot.js"></script>
+<script type="text/javascript" src="http://www.robotmoose.com/js/pilot.js"></script>
 
 <!--Jquery files for interface additions -->
-<script src="jquery/external/jquery/jquery.js"></script>
-<script src="jquery/jquery-ui.js"></script>
-<link href="jquery/jquery-ui.css" rel="stylesheet">
+<script src="http://www.robotmoose.com/js/jquery.min.js"></script>
+<script src="http://www.robotmoose.com/js/query-ui/jquery-ui.js"></script>
+<link href="http://www.robotmoose.com/js/jquery-ui/jquery-ui.css" rel="stylesheet">
 
-<script src="js/sha2_auth.js"></script> <!-- auth support -->
+<script src="http://www.robotmoose.com/js/sha2_auth.js"></script> <!-- auth support -->
 
 
-<script type="text/javascript" src="jscolor/jscolor.js"></script> <!-- Jscolor library for color picker -->
+<script type="text/javascript" src="http://www.robotmoose.com/js/jscolor/jscolor.js"></script> <!-- Jscolor library for color picker -->
 
 <script type="text/javascript">
-//Make Tabs collapsible 
+//Make Tabs collapsible
 $(function(){
 	$( "#tabs").tabs({collapsible: true});
 });
@@ -40,14 +40,14 @@ $(function(){
 <tr>
 </table>
 
-<div id="tabs"> 
+<div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">Setup</a></li>
 		<li><a href="#tabs-2">Interaction</a></li>
 		<li><a href="#tabs-3">Sensors</a></li>
-		<li><a href="#tabs-4">Robot Health</a></li> 
+		<li><a href="#tabs-4">Robot Health</a></li>
 	</ul>
-	
+
 	<div id="tabs-1">
 		<p>
 		Robot Name: <input type="text" id="robot_name" rows="1" cols="30" onChange="run();" value="layla/uaf">
@@ -81,13 +81,13 @@ $(function(){
 			<tr>
 
 			<td>Toggle LED<input id="LEDtoggle" value="LED On" type="checkbox" onClick="LEDtoggle()"></td>
-			<td>LED Demo <input  id="LEDdemo" value="LED Demo" type="checkbox" onClick="LEDdemo()" disabled></td> 
+			<td>LED Demo <input  id="LEDdemo" value="LED Demo" type="checkbox" onClick="LEDdemo()" disabled></td>
 			<td><input class="color{pickerOnfocus:true}" id="color_picker" onchange = "updateRGB()"></td>
 			</tr>
 			<tr>
 			<td></td> <!-- 2 empty cells for Alignment -->
 			<td></td>
- 
+
 			<td colspan="3">R <input id="LED_red" size="5">  G <input id="LED_green" size="5">  B <input id="LED_blue" size="5">
 			</tr>
 
@@ -98,14 +98,14 @@ $(function(){
 	</div> <!-- Close Interaction Tab -->
 	<div id="tabs-3">
 		<table>
-		 <CAPTION> Current Sensor Values</CAPTION> 
+		 <CAPTION> Current Sensor Values</CAPTION>
 		 <!-- Display Utrasonic Sensor Values -->
 		<td colspan="5">Ultrasonic Sensors <input id="USonic1" size ="3" disabled> <input id="USonic2" size ="3" disabled> <input id="USonic3" size ="3" disabled> <input id="USonic4" size ="3" disabled> <input id="USonic5" size ="3" disabled> </td>
 		</tr>
 		</table>
-				
+
 	</div> <!-- Close Sensors Tab -->
-	
+
 	<div id="tabs-4">
 		<table>
 		<tr>
@@ -115,7 +115,7 @@ $(function(){
 		<P id="p_outputPilot">Pilot Status</p>
 		</tr>
 		</table>
-	</div> <!-- Close Robot health Tab -->	
+	</div> <!-- Close Robot health Tab -->
 </div>
 <script> $( "#tabs" ).tabs(); </script> <!--Has to be placed after tabs-->
 
