@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!--Pilot Source-->
-		<script type="text/javascript" src="http://www.robotmoose.com/js/pilot.js"></script>
-
 		<!--UI Source-->
 		<script src="http://www.robotmoose.com/js/jquery/jquery.min.js"></script>
 		<script src="http://www.robotmoose.com/js/jquery-ui/jquery-ui.js"></script>
@@ -54,7 +51,7 @@
 
 				<div id="tabs-1">
 					<p>
-						Robot Name: <input type="text" id="robot_name" rows="1" cols="30" onChange="run();" value="layla/uaf"/>
+						Robot Name:<input type="text" id="robot_name" rows="1" cols="30" onChange="run();" value="layla/uaf"/>
 						<input value="Video - Gruveo" type="button" onClick="runCmd('video','r'+((new Date()).getTime())); openGruveoVideo()"/><br/>
 
 						RTC video name: <input type="text" id="robot_videoname" rows="1" cols="30" onChange="updateRTCVideo()" value="layla/uaf"/>
@@ -129,6 +126,9 @@
 					</table>
 				</div>
 			</div>
+
+			<!--Pilot Source-->
+			<script type="text/javascript" src="http://www.robotmoose.com/js/pilot.js"></script>
 
 			<!--Tab Stuff?-->
 			<script type="text/javascript">
