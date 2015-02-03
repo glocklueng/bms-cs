@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!--UI Source-->
-		<script src="http://www.robotmoose.com/js/jquery/jquery.min.js"></script>
-		<script src="http://www.robotmoose.com/js/jquery-ui/jquery-ui.js"></script>
-		<link href="http://www.robotmoose.com/css/jquery-ui.css" rel="stylesheet">
-
 		<!--Color Picker Source-->
 		<script type="text/javascript" src="http://www.robotmoose.com/js/jscolor/jscolor.js"></script>
 
-		<title>RobotMoose - Pilot</title>
 		<!--#include virtual="/sources.html"-->
+		<title>RobotMoose - Pilot</title>
 	</head>
 
 	<body role="document" onload="run();">
@@ -35,77 +30,80 @@
 					</tr>
 				</table>
 
-			<div id="123456_tabs">
-				<ul>
+			<div role="tabpanel">
+				<ul class="nav nav-tabs" role="tablist">
 					<li><a href="#tabs-1">Setup</a></li>
-					<li><a href="#tabs-2">Interaction</a></li>
-					<li><a href="#tabs-3">Sensors</a></li>
-					<li><a href="#tabs-4">Robot Health</a></li>
+					<li role="presentation" class="active"><a href="#home" aria-controls="setup" role="tab" data-toggle="tab">Setup</a></li>
+					<li role="presentation" class="active"><a href="#home" aria-controls="interaction" role="tab" data-toggle="tab">Interaction</a></li>
+					<li role="presentation" class="active"><a href="#home" aria-controls="sensors" role="tab" data-toggle="tab">Sensors</a></li>
+					<li role="presentation" class="active"><a href="#home" aria-controls="robot_health" role="tab" data-toggle="tab">Robot Health</a></li>
 				</ul>
 
-				<div id="123456_tabs-1">
-					<p>
-						Robot Name:<input type="text" id="robot_name" rows="1" cols="30" onChange="run();" value="layla/uaf"/>
-						<input value="Video - Gruveo" type="button" onClick="runCmd('video','r'+((new Date()).getTime())); openGruveoVideo()"/><br/>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="setup">
+						<p>
+							Robot Name:<input type="text" id="robot_name" rows="1" cols="30" onChange="run();" value="layla/uaf"/>
+							<input value="Video - Gruveo" type="button" onClick="runCmd('video','r'+((new Date()).getTime())); openGruveoVideo()"/><br/>
 
-						RTC video name: <input type="text" id="robot_videoname" rows="1" cols="30" onChange="updateRTCVideo()" value="layla/uaf"/>
-						<input value="Video - RTC" type="button" onClick="updateRTCVideo()"/><br/>
+							RTC video name: <input type="text" id="robot_videoname" rows="1" cols="30" onChange="updateRTCVideo()" value="layla/uaf"/>
+							<input value="Video - RTC" type="button" onClick="updateRTCVideo()"/><br/>
 
-						Drive Power: <input type="text" id="robot_power" rows="1" cols="30" onChange="run()" value="15"/><br/>
+							Drive Power: <input type="text" id="robot_power" rows="1" cols="30" onChange="run()" value="15"/><br/>
 
-						Pilot Auth: <input type="text" id="robot_auth" rows="1" cols="30" onChange="run()" value=""/><br/>
-					</p>
+							Pilot Auth: <input type="text" id="robot_auth" rows="1" cols="30" onChange="run()" value=""/><br/>
+						</p>
+					</div>
+
+					<div role="tabpanel" class="tab-pane active" id="interaction">
+						<p>
+							Show text: <input type="text" id="robot_showtext" rows="1" cols="30" onChange="runCmd('say',this.value)" value="Hi! "/><br/>
+
+							Play sounds:
+								<input value="Beep 1" type="button" onClick="runCmd('play','music/whistle1.mp3')"/>
+								<input value="Beep 2" type="button" onClick="runCmd('play','music/whistle2.mp3')"/>
+								<input value="Stop" type="button" onClick="runCmd('play','')"/><br/>
+
+							<div id="button_area" style="font-style:italic">
+								<table>
+									<tr>
+										<td>
+											Toggle LED<input id="LEDtoggle" value="LED On" type="checkbox" onClick="LEDtoggle()"/>
+										</td>
+										<td>
+											LED Demo <input  id="LEDdemo" value="LED Demo" type="checkbox" onClick="LEDdemo()" disabled/>
+										</td>
+										<td>
+											<input class="color{pickerOnfocus:true}" id="color_picker" onchange = "updateRGB()"/>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td colspan="3">R <input id="LED_red" size="5"/>  G <input id="LED_green" size="5"/>  B <input id="LED_blue" size="5"/>
+									</tr>
+								</table>
+							</div>
+						</p>
+					</div>
+
+					<div role="tabpanel" class="tab-pane active" id="sensors">
+						<table>
+							<CAPTION> Current Sensor Values</CAPTION>
+							<tr>
+								<td colspan="5">
+									Ultrasonic Sensors
+									<input id="USonic1" size ="3" disabled/>
+									<input id="USonic2" size ="3" disabled/>
+									<input id="USonic3" size ="3" disabled/>
+									<input id="USonic4" size ="3" disabled/>
+									<input id="USonic5" size ="3" disabled/>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 
-				<div id="123456_tabs-2">
-					<p>
-						Show text: <input type="text" id="robot_showtext" rows="1" cols="30" onChange="runCmd('say',this.value)" value="Hi! "/><br/>
-
-						Play sounds:
-							<input value="Beep 1" type="button" onClick="runCmd('play','music/whistle1.mp3')"/>
-							<input value="Beep 2" type="button" onClick="runCmd('play','music/whistle2.mp3')"/>
-							<input value="Stop" type="button" onClick="runCmd('play','')"/><br/>
-
-						<div id="button_area" style="font-style:italic">
-							<table>
-								<tr>
-									<td>
-										Toggle LED<input id="LEDtoggle" value="LED On" type="checkbox" onClick="LEDtoggle()"/>
-									</td>
-									<td>
-										LED Demo <input  id="LEDdemo" value="LED Demo" type="checkbox" onClick="LEDdemo()" disabled/>
-									</td>
-									<td>
-										<input class="color{pickerOnfocus:true}" id="color_picker" onchange = "updateRGB()"/>
-									</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td colspan="3">R <input id="LED_red" size="5"/>  G <input id="LED_green" size="5"/>  B <input id="LED_blue" size="5"/>
-								</tr>
-							</table>
-						</div>
-					</p>
-				</div>
-
-				<div id="123456_tabs-3">
-					<table>
-						<CAPTION> Current Sensor Values</CAPTION>
-						<tr>
-							<td colspan="5">
-								Ultrasonic Sensors
-								<input id="USonic1" size ="3" disabled/>
-								<input id="USonic2" size ="3" disabled/>
-								<input id="USonic3" size ="3" disabled/>
-								<input id="USonic4" size ="3" disabled/>
-								<input id="USonic5" size ="3" disabled/>
-							</td>
-						</tr>
-					</table>
-				</div>
-
-				<div id="123456_tabs-4">
+				<div role="tabpanel" class="tab-pane active" id="robot_health">
 					<table>
 						<tr>
 							<td>
@@ -125,12 +123,6 @@
 				<p id="p_errorout" style="color:red;">ERROR: JavaScript not enabled.</p>
 			</div>
 		</div>
-
-		<!--Tab Stuff?-->
-		<script type="text/javascript">
-			document.getElementById("123456_tabs").tabs();
-			document.getElementById("123456_tabs").collapsible=true;
-		</script>
 
 		<!--Pilot Source-->
 		<script type="text/javascript" src="http://www.robotmoose.com/js/pilot.js"></script>
