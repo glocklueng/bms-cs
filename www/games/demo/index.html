@@ -18,9 +18,9 @@
 				run=!run;
 
 				if(run)
-					document.getElementById("run").value="Pause";
+					document.getElementById("runner").innerHTML="Pause";
 				else
-					document.getElementById("run").value="Play";
+					document.getElementById("runner").innerHTML="Play";
 			}
 
 			function init()
@@ -51,11 +51,16 @@
 
 			function draw()
 			{
-				if(run)
+				if(simulation&&!run)
 				{
-					moose.draw(simulation);
-					level.draw(simulation);
+					simulation.ctx.font="48px serif";
+					simulation.ctx.textAlign="center";
+					simulation.ctx.fillText("PAUSED",simulation.canvas.width/2.0,
+						simulation.canvas.height/2.0+24);
 				}
+
+				moose.draw(simulation);
+				level.draw(simulation);
 			}
 		</script>
 	</head>
@@ -68,7 +73,8 @@
 			</div>
 			<center>
 				<canvas id="canvas" width="320px" height="240px" style="border:1px solid #000000;"></canvas>
-				<button id="run" onclick="toggle();" class="btn btn-lg btn-primary"></button>
+				<br/>
+				<button id="runner" onclick="toggle();" class="btn btn-lg btn-primary"></button>
 			</center>
 
 		</div>
