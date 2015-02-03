@@ -1,13 +1,13 @@
-(function(){var imported=document.createElement("script");imported.src="sprite.js";document.head.appendChild(imported);})();
-(function(){var imported=document.createElement("script");imported.src="level.js";document.head.appendChild(imported);})();
+(function(){var imported=document.createElement("script");imported.src="http://robotmoose.com/games/demo/sprite.js";document.head.appendChild(imported);})();
+(function(){var imported=document.createElement("script");imported.src="http://robotmoose.com/games/demo/level.js";document.head.appendChild(imported);})();
 
 var moose_t=function(x,y)
 {
 	this.x=x;
 	this.y=y;
-	this.spr_right=new sprite_t("moose_right.png",4);
-	this.spr_left=new sprite_t("moose_left.png",4);
-	this.spr_jump=new sprite_t("moose_jump.png",2);
+	this.spr_right=new sprite_t("http://robotmoose.com/games/demo/moose_right.png",4);
+	this.spr_left=new sprite_t("http://robotmoose.com/games/demo/moose_left.png",4);
+	this.spr_jump=new sprite_t("http://robotmoose.com/games/demo/moose_jump.png",2);
 	this.spr=this.spr_right;
 	this.speed=100;
 	this.animation_speed=20;

@@ -79,6 +79,6 @@ var canvas_t=function(canvas_obj,setup_func,loop_func,draw_func)
 
 	this.user_setup();
 	this.loop(this);
-	window.addEventListener('keydown',this.keydown,true);
-	window.addEventListener('keyup',this.keyup,true);
+	window.addEventListener("keydown",this.keydown,true);
+	window.addEventListener("keyup",this.keyup,true);
 };

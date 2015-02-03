@@ -1,4 +1,4 @@
-(function(){var imported=document.createElement("script");imported.src="block.js";document.head.appendChild(imported);})();
+(function(){var imported=document.createElement("script");imported.src="http://robotmoose.com/games/demo/block.js";document.head.appendChild(imported);})();
 
 var level_t=function(places)
 {
