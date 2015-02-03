@@ -6,13 +6,6 @@
 		<script src="http://www.robotmoose.com/js/jquery-ui/jquery-ui.js"></script>
 		<link href="http://www.robotmoose.com/css/jquery-ui.css" rel="stylesheet">
 
-		<script>
-			$(function(){$( "#tabs" ).tabs();});
-		</script>
-
-		<!--Auth Source-->
-		<script src="http://www.robotmoose.com/js/auth/sha2_auth.js"></script>
-
 		<!--Color Picker Source-->
 		<script type="text/javascript" src="http://www.robotmoose.com/js/jscolor/jscolor.js"></script>
 
@@ -20,7 +13,6 @@
 	</head>
 
 	<body role="document">
-
 		<div class="container theme-showcase" role="main" style="padding-top: 70px;">
 			<div class="page-header">
 				<h1>Pilot</h1>
@@ -127,17 +119,22 @@
 				</div>
 			</div>
 
-			<!--Pilot Source-->
-			<script type="text/javascript" src="http://www.robotmoose.com/js/pilot.js"></script>
-
-			<!--Tab Stuff?-->
-			<script type="text/javascript">
-				document.getElementById("tabs").collapsible=true;
-			</script>
-
 			<div id="status_area" style="font-style:italic;">
 				<p id="p_errorout" style="color:red;">ERROR: JavaScript not enabled.</p>
 			</div>
 		</div>
+
+
+		<!--Pilot Source-->
+		<script type="text/javascript" src="http://www.robotmoose.com/js/pilot.js"></script>
+
+		<!--Tab Stuff?-->
+		<script type="text/javascript">
+			$(function(){$( "#tabs" ).tabs();});
+			document.getElementById("tabs").collapsible=true;
+		</script>
+
+		<!--Auth Source-->
+		<script src="http://www.robotmoose.com/js/auth/sha2_auth.js"></script>
 	</body>
 </html>
