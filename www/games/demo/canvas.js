@@ -60,7 +60,7 @@ var canvas_t=function(canvas_obj,setup_func,loop_func,draw_func)
 
 	this.loop=function(obj)
 	{
-		if(myself.canvas.hasFocus())
+		if(myself.canvas&&myself.canvas.hasFocus())
 		{
 			if(myself.user_loop&&myself.old_time&&myself.loop&&myself.draw)
 			{
