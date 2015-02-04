@@ -86,7 +86,7 @@ function moose_t(x,y)
 			if(simulation.keys_pressed[kb_up]&&!myself.jump)
 			{
 				myself.jump=true;
-				myself.y_velocity-=5;
+				myself.y_velocity=-5;
 			}
 			if(myself.jump)
 			{
