@@ -1,6 +1,6 @@
 (function(){var imported=document.createElement("script");imported.src="http://robotmoose.com/games/demo/block.js";document.head.appendChild(imported);})();
 
-var level_t=function(places)
+function level_t(places)
 {
 	var myself=this;
 

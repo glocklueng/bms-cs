@@ -1,4 +1,4 @@
-var sprite_t=function(source,frames)
+function sprite_t(source,frames)
 {
 	var myself=this;
 

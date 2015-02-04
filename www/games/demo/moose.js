@@ -1,7 +1,7 @@
 (function(){var imported=document.createElement("script");imported.src="http://robotmoose.com/games/demo/sprite.js";document.head.appendChild(imported);})();
 (function(){var imported=document.createElement("script");imported.src="http://robotmoose.com/games/demo/level.js";document.head.appendChild(imported);})();
 
-var moose_t=function(x,y)
+function moose_t(x,y)
 {
 	var myself=this;
 
