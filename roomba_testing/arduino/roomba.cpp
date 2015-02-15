@@ -134,10 +134,11 @@ void roomba_t::update()
 		}
 		else if(serial_state_m==CHECKSUM)
 		{
-			/*if(checksum(ROOMBA_PACKET_HEADER,serial_size_m,serial_buffer_m,data))
-				std::cout<<"GOT A PACKET!"<<std::endl;
-			else
-				std::cout<<"BAD PACKET!"<<std::endl;*/
+			if(checksum(ROOMBA_PACKET_HEADER,serial_size_m,serial_buffer_m,data))
+			{
+				//Need to make a struct to hold this data, then just write it in...
+				//std::cout<<"GOT A PACKET!"<<std::endl;
+			}
 
 			serial_size_m=0;
 			free(serial_buffer_m);
