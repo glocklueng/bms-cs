@@ -55,6 +55,8 @@ function editor_t()
 	{
 		if(myself.editor&&myself.compilable)
 		{
+			myself.clear_errors();
+
 			if(myself.timeout)
 				window.clearTimeout(myself.timeout);
 
