@@ -160,7 +160,7 @@ function editor_t()
 
 	myself.compile_response=function(response)
 	{
-		if(myself.editor&&!myself.timeout)
+		if(myself.editor)
 		{
 			myself.set_status("");
 
