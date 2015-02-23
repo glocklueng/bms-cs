@@ -56,7 +56,7 @@ function editor_t()
 		if(myself.editor&&myself.compilable)
 		{
 			myself.clear_errors();
-			set_status("");
+			myself.set_status("");
 
 			if(myself.timeout)
 				window.clearTimeout(myself.timeout);
@@ -176,7 +176,7 @@ function editor_t()
 			catch(e)
 			{
 				console.log(e);
-				set_status("Server error...");
+				myself.set_status("Server error...");
 			}
 		}
 	};
