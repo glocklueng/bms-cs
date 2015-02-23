@@ -59,7 +59,10 @@ function editor_t()
 			myself.set_status("");
 
 			if(myself.timeout)
+			{
 				window.clearTimeout(myself.timeout);
+				myself.timeout=null;
+			}
 
 			myself.timeout=setTimeout(myself.compile,myself.compile_time);
 		}
@@ -75,7 +78,10 @@ function editor_t()
 		myself.compilable=false;
 
 		if(myself.timeout)
+		{
 			window.clearTimeout(myself.timeout);
+			myself.timeout=null;
+		}
 	};
 
 	myself.set_status=function(text)
