@@ -56,6 +56,7 @@ function editor_t()
 		if(myself.editor&&myself.compilable)
 		{
 			myself.clear_errors();
+			set_status("");
 
 			if(myself.timeout)
 				window.clearTimeout(myself.timeout);
@@ -155,10 +156,10 @@ function editor_t()
 	{
 		if(myself.editor)
 		{
+			myself.set_status("");
+
 			if(myself.timeout)
 				window.clearTimeout(myself.timeout);
-
-				myself.set_status("");
 
 			try
 			{
