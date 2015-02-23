@@ -154,12 +154,9 @@ function editor_t()
 
 	myself.compile_response=function(response)
 	{
-		if(myself.editor)
+		if(myself.editor&&!myself.timeout)
 		{
 			myself.set_status("");
-
-			if(myself.timeout)
-				window.clearTimeout(myself.timeout);
 
 			try
 			{
