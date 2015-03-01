@@ -76,8 +76,11 @@
 
 				if(emulator.running())
 				{
-					document.getElementById("nod").value=emulator.map(emulator.pin_servos[8],0,255,0,180);
-					document.getElementById("twist").value=emulator.map(emulator.pin_servos[9],0,255,0,180);
+					if(emulator.pin_directions[8]==3)
+						document.getElementById("nod").value=emulator.map(emulator.pin_servos[8],0,255,0,180);
+
+					if(emulator.pin_directions[9]==3)
+						document.getElementById("twist").value=emulator.map(emulator.pin_servos[9],0,255,0,180);
 				}
 
 				nod_update();
