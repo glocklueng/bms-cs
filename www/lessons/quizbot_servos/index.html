@@ -63,9 +63,6 @@
 				lights[5]=new renderer.create_light(intensity);
 				lights[5].position.set(0,150,-size);
 
-				var test=new THREE.HemisphereLight( 0x0000ff, 0x00ff00,1);
-				renderer.scene.add(test);
-
 				quizbot=new quizbot_t(renderer);
 				quizbot.set_nod(parseInt(document.getElementById("nod").value));
 				quizbot.set_twist(parseInt(document.getElementById("twist").value));
