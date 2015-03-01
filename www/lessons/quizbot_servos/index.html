@@ -30,7 +30,7 @@
 				stop_button=document.getElementById("stop");
 				editor.create(document.getElementById("code"));
 				editor.set_value("#include <Servo.h>\nServo nod;\nServo twist;\n\nvoid setup()\n{\n\t//This happens once\n\tnod.attach(8);\n\tnod.write(40);\n\ttwist.attach(9);\n\ttwist.write(90);\n}\n\nvoid loop()\n{\n\t//This keeps happening\n\ttwist.write(0);\n\tdelay(1000);\n\ttwist.write(180);\n\tdelay(1000);\n}");
-				editor.set_size(480,464);
+				editor.set_size(480,460);
 				editor.on_change=function(){stop();run_button.disabled=true;};
 				editor.on_compiled=function(){stop();};
 
