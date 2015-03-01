@@ -7,7 +7,7 @@ function load_js(js)
 
 function load_dependencies()
 {
-	load_js("js/3d.js");
+	load_js("http://robotmoose.com/js/3d.js");
 };
 
 (function(){load_dependencies()})();
