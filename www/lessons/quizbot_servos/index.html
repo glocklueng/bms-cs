@@ -29,7 +29,7 @@
 				run_button=document.getElementById("run");
 				stop_button=document.getElementById("stop");
 				editor.create(document.getElementById("code"));
-				editor.set_value("//Head servo is on pin 8\n//Neck servo is on pin 9\n\n//Need this to use servos\n#include <Servo.h>\n\nvoid setup()\n{\n\t//This happens once\n}\n\nvoid loop()\n{\n\t//This keeps happening\n}");
+				editor.set_value("//Head servo is on pin 8\n//Neck servo is on pin 9\n\n//Need this to use servos\n#include <Servo.h>\n\nvoid setup()\n{\n\t//Things written in here happens once\n}\n\nvoid loop()\n{\n\t//Things written in here keep happening\n}");
 				editor.set_size(480,460);
 				editor.on_change=function(){stop();run_button.disabled=true;};
 				editor.on_compiled=function(){stop();};
