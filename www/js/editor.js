@@ -214,6 +214,7 @@ function editor_t()
 			}
 			catch(e)
 			{
+				console.log(eresponse);
 				console.log(e);
 				myself.set_status("Server error...");
 			}
