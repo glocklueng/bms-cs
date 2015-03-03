@@ -110,6 +110,8 @@ function quizbot_t(renderer)
 
 	myself.loop=function(dt)
 	{
+		console.log(myself.twist);
+
 		if(dt)
 		{
 			var rad_nod=-(myself.nod-40)*Math.PI/180;
