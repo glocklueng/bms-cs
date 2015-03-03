@@ -129,7 +129,7 @@ function model_t(scene)
 	{
 		if(parent)
 		{
-			if(myself.loaded)
+			if(myself.loaded&&myself.mesh)
 			{
 					parent.mesh.add(myself.mesh);
 					myself.scene.remove(myself.mesh);
