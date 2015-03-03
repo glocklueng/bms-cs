@@ -129,7 +129,7 @@
 
 			function twist_update()
 			{
-				var V=180-parseInt(document.getElementById("twist").value);
+				var V=parseInt(document.getElementById("twist").value);
 				quizbot.set_twist_target(V);
 				document.getElementById("show_twist").innerHTML=""+V;
 			}

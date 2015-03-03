@@ -129,20 +129,20 @@ function quizbot_t(renderer)
 			if(Math.floor(myself.nod)>myself.nod_target)
 				myself.nod-=speed*dt;
 
-			/*if(myself.nod<0)
+			if(myself.nod<0)
 				myself.nod=0;
 			if(myself.nod>180)
-				myself.nod=180;*/
+				myself.nod=180;
 
 			if(Math.floor(myself.twist)<myself.twist_target)
 				myself.twist+=speed*dt;
 			if(Math.floor(myself.twist)>myself.twist_target)
 				myself.twist-=speed*dt;
 
-			/*if(myself.twist<0)
+			if(myself.twist<0)
 				myself.twist=0;
 			if(myself.twist>180)
-				myself.twist=180;*/
+				myself.twist=180;
 		}
 	};
 };
