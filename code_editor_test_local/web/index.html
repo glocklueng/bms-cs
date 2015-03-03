@@ -168,41 +168,45 @@
 			</center>
 		</div>
 
-		How does this work?
-		<ul>
-			<li>You can edit the code above, and press Run to have the simulated Arduino run it.</li>
-			<li>When we call body.write(80); the Arduino tells the body servo to rotate to angle 80 degrees.</li>
-		</ul>
+		<div class="well">
+			How does this work?
+			<ul>
+				<li>You can edit the code above, and press Run to have the simulated Arduino run it.</li>
+				<li>When we call body.write(80); the Arduino tells the body servo to rotate to angle 80 degrees.</li>
+			</ul>
 
-		<ul>
-			<li><i>body</i> is an object, which we declared as type Servo at the top.</li>
-			<li><i>write</i> is a member function to run with parameter 80.</li>
-			<li>The semicolon ; ends a function call in many programming languages.</li>
-			<li>This is C++ code (used to build operating systems), but JavaScript (used to build apps) looks very similar.</li>
-		</ul>
+			<ul>
+				<li><i>body</i> is an object, which we declared as type Servo at the top.</li>
+				<li><i>write</i> is a member function to run with parameter 80.</li>
+				<li>The semicolon ; ends a function call in many programming languages.</li>
+				<li>This is C++ code (used to build operating systems), but JavaScript (used to build apps) looks very similar.</li>
+			</ul>
 
-		<ul>
-			<li>Body rotates the head left and right (bigger numbers), and is centered at 90.</li>
-			<li>Neck rotates the head down and up (bigger numbers), and is centered at 40.</li>
-			<li>The body and neck make a 2D cartesian coordinate system, like the latitude longitude grid on the Earth.</li>
-			<li>We need the delay so the servo has time to move where you tell it.  Smaller numbers give the servo less time to move.</li>
-		</ul>
+			<ul>
+				<li>Body rotates the head left and right (bigger numbers), and is centered at 90.</li>
+				<li>Neck rotates the head down and up (bigger numbers), and is centered at 40.</li>
+				<li>The body and neck make a 2D cartesian coordinate system, like the latitude longitude grid on the Earth.</li>
+				<li>We need the delay so the servo has time to move where you tell it.  Smaller numbers give the servo less time to move.</li>
+			</ul>
+		</div>
 
-		Challenges!
-		<ul>
-			<li>Stop the code and drag the sliders to put the head facing straight up.  What body and neck coordinates are these?</li>
-			<li>Change the numbers passed into the servo write calls, and see where the head moves.</li>
-			<li>You can animate a series of motions by making more write calls in loop.  For example, this moves the neck servo up and down:</li>
+		<div class="well">
+			Challenges!
+			<ul>
+				<li>Stop the code and drag the sliders to put the head facing straight up.  What body and neck coordinates are these?</li>
+				<li>Change the numbers passed into the servo write calls, and see where the head moves.</li>
+				<li>You can animate a series of motions by making more write calls in loop.  For example, this moves the neck servo up and down:</li>
 
-			<textarea id="code_test"></textarea>
-			Try this!
+				<textarea id="code_test"></textarea>
+				Try this!
 
-			<li>Move the head right, then left, then back to center.</li>
-			<li>Move the head in a diagonal--bottom left, then top right, then back to center.</li>
-			<li>Move the head in a clockwise circle--right, up, left, down.</li>
-			<li>Tune a "good nod" for yes, and a "good shake" for no.</li>
-			<li>Add a robot "twitch", where it jumps back and forth quickly, then looks forward for a while.</li>
-		</ul>
+				<li>Move the head right, then left, then back to center.</li>
+				<li>Move the head in a diagonal--bottom left, then top right, then back to center.</li>
+				<li>Move the head in a clockwise circle--right, up, left, down.</li>
+				<li>Tune a "good nod" for yes, and a "good shake" for no.</li>
+				<li>Add a robot "twitch", where it jumps back and forth quickly, then looks forward for a while.</li>
+			</ul>
+		</div>
 
 		Mike built this simulator last weekend!
 
