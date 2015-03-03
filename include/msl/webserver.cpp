@@ -49,14 +49,14 @@ void msl::webserver_t::open()
 
 void msl::webserver_t::close()
 {
-	if(server_m!=nullptr)
+	/*if(server_m!=nullptr)
 	{
 		for(int ii=0;ii<10;++ii)
 		{
 			mg_destroy_server(&server_m[ii]);
 			server_m[ii]=nullptr;
 		}
-	}
+	}*/
 }
 
 std::string msl::webserver_t::address() const
