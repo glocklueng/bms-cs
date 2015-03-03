@@ -39,7 +39,7 @@ void msl::webserver_t::open()
 		if(server!=nullptr&&mg_poll_server(server,10))
 			server_m[ii]=server;
 
-		if(good())
+		//if(good())
 		{
 			std::thread server_thread(server_thread_func_m,server);
 			server_thread.detach();
